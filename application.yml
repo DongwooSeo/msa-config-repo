@@ -1,0 +1,5 @@
+# ~/config-repo/application.yml — "모든" Config Client 에게 공통으로 배달된다
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
