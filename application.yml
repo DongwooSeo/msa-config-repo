@@ -3,3 +3,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+    refresh:
+      enable: false   # Eureka 클라이언트를 refresh 대상에서 제외
