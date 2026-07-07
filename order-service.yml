@@ -25,3 +25,18 @@ order:
   client:
     product-base-url: http://product-service
     payment-base-url: http://payment-service
+
+# 차단기 관제 창구.
+# ⚠️ 함정 주의: 서비스별 파일의 이 키는 공통 application.yml 의 exposure 를 "덮어쓴다".
+# refresh 를 다시 적어주지 않으면 Step 4에서 열어둔 /actuator/refresh 가 닫혀 버린다! (자주 겪는 문제 ⑤)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,circuitbreakers,circuitbreakerevents
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
