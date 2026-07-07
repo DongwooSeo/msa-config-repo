@@ -16,3 +16,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+payment:
+  demo:
+    delay-ms: 30000
