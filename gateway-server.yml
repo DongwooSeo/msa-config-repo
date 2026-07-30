@@ -45,6 +45,8 @@ spring:
               uri: lb://user-service
               predicates:
                 - Path=/users/**
+          httpclient:
+            response-timeout: 10s
 
 # 공통(application.yml)의 refresh 노출에 gateway 엔드포인트를 더한다.
 management:
