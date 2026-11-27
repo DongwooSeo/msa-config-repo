@@ -25,6 +25,8 @@ spring:
         config:
           default:          # 모든 Feign 클라이언트 공통 (특정 클라이언트만 하려면 default 대신 이름)
             logger-level: full
+            connect-timeout: 1000   # 접속 시도는 1초까지만 (기본 10초)
+            read-timeout: 3000      # 응답 대기는 3초까지만 (기본 60초!) — TimeLimiter(3초)와 이중 방어
 
 logging:
   level:
