@@ -19,6 +19,16 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:          # 모든 Feign 클라이언트 공통 (특정 클라이언트만 하려면 default 대신 이름)
+            logger-level: full
+
+logging:
+  level:
+    com.growmighty.lectures.firstday.order.infrastructure.client: DEBUG
 
 # "base-url 만 바꾸면 MSA" 의 실체 — 배포 환경에선 이 값만 바꾼다.
 order:
